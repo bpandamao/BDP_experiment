@@ -21,10 +21,10 @@ for (i in 1:5){
     sigma2[i,j]=0.5^ep
   }
 }
-X1=rmvnorm(100,rep(0,5),sqrt(sigma2))
+X2=rmvnorm(100,rep(0,5),sqrt(sigma2))
 rbeta2=c(2,0,-1,0,2)/3
-ww=X1%*%rbeta2
-Y1=cos(ww)+rnorm(100)
+ww=X2%*%rbeta2
+Y2=cos(ww)+rnorm(100)
 
 ####
 #function
@@ -59,8 +59,6 @@ weights2=function(K,L,V,Z){
   return(out)
 }
 
-###################### Application
-EX1=gibbs_bspline_est_linkfunction(X1,Y1,S=10)
 
 ### the function of posterior computation
 #suppose both K,M in G and Bspline are the same
